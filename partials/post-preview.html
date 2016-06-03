@@ -1,0 +1,26 @@
+<div class="post post-preview" itemscope itemtype="http://schema.org/Recipe">
+	<a href="/post/{{post.id}}/{{post.title | spaceless:post.title}}">
+		<h3 itemprop="name">
+			{{post.title | limitTo: 32}}
+			<span ng-if="post.title.length > 32">...</span>
+		</h3>
+		<div class="post-badge" ng-show="post.badge">
+			{{post.badge}}
+		</div>
+		<img itemprop="image" alt="{{post.title}}" class="img-responsive post-preview-img" src="img/posts/{{post.imgId}}.jpg" err-src="img/placeholder.jpg" title="{{post.title}}"/>
+	</a>
+	<p class="post-info">
+		<span class="glyphicon glyphicon-calendar"></span> {{post.date | date:"dd/MM/yyyy"}}
+		<span class="glyphicon glyphicon-pencil"></span> {{post.authorName}}
+		<span class="glyphicon glyphicon-time"></span> {{post.estTime}}
+	</p>
+	<p class="short-desc">
+		<span itemprop="description" ng-bind-html="post.shortDesc | limitTo: 100"></span>
+		<span ng-if="post.shortDesc.length > 100">...</span>
+	</p>
+
+	<a href="/post/{{post.id}}/{{post.title | spaceless:post.title}}" rel="nofollow" target="_self" class="btn btn-primary pull-left">
+		 קרא עוד 
+		 <span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+</div>

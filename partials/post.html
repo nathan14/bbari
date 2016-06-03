@@ -1,0 +1,55 @@
+<div class="post" itemscope itemtype="http://schema.org/Recipe">
+    <div class="col-sm-12 col-sm-10 col-sm-offset-1 xs-full-width">
+        <span ng-hide="true"> {{post.id}} </span>
+        <h1 itemprop="name"> {{post.title}} </h1>
+        <div class="post-badge" ng-show="post.badge">
+            {{post.badge}}
+        </div>
+        <img itemprop="image" class="img-responsive post-img" alt="{{post.title}} - מתכונים בריאים" title="{{post.title}}" ng-src="img/posts/{{post.imgId}}.jpg" err-src="img/placeholder.jpg" ng-show="!uploader.formData.id"/>
+        <img class="img-responsive post-img" ng-src="img/posts/{{uploader.formData.id}}.jpg" ng-show="uploader.formData.id"/>
+        <br>
+        <p class="post-info" ng-show="post.date">
+            <span class="glyphicon glyphicon-calendar"></span> {{post.date | date:"dd/MM/yyyy"}}
+            <span itemprop="author" class="glyphicon glyphicon-pencil"></span> {{post.authorName}}
+            <span class="glyphicon glyphicon-time"></span> {{post.estTime}}
+        </p>
+        <p class="short-desc" itemprop="description" ng-bind-html="post.shortDesc"> <br> </p>
+
+        <button class="btn btn-facebook" ng-show="adminBtns" ng-click="FBShare()">
+            <i class="fa fa-facebook"></i>
+            שתף
+        </button> 
+
+        <button class="btn btn-primary" ng-show="recepieBtn && post.recepie" ng-click="gotoRecepie()">
+            <span class="glyphicon glyphicon-book"></span>
+            מתכון
+        </button> 
+        
+        <a href="/post-edit/{{post.id}}" class="btn btn-primary" ng-show="adminBtns && ((user.permissions > 1 && post.authorId == user.id) || (user.permissions > 3))">
+            <span class="glyphicon glyphicon-edit"></span>
+        </a>
+
+        <button ng-controller="ModalCtrl" class="btn btn-primary" ng-click="open('postDelete', post.id)" ng-show="adminBtns && ((user.permissions > 1 && post.authorId == user.id) || (user.permissions > 3))">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+        <p class="post-content" ng-bind-html="post.content"> </p>
+
+        <div id="recepie" class="paper top-shadow bottom-shadow" ng-show="post.recepie">
+            <h3>מרכיבים</h3>
+            <p ng-bind-html="post.recepie"> </p>
+            <h3>אופן הכנה</h3>
+            <p itemprop="recipeInstructions" ng-bind-html="post.recepieHowTo"> </p>
+        </div>
+
+        <br>
+    </div>
+    <br>
+</div>
+
+<div class="disqus col-sm-12 col-sm-10 col-sm-offset-1 xs-full-width" ng-show="adminBtns">
+	<dir-disqus disqus-shortname="taribari"
+	         disqus-identifier="{{ identifier }}"
+	         disqus-url="{{ url }}">
+	</dir-disqus>
+</div>

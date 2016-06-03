@@ -1,0 +1,57 @@
+<div ng-show="toLogin">
+    <h1>התחברות</h1>
+    <form name="loginForm" class="full-width col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4" ng-submit="loginForm.$valid && loginUser()">
+        <div ng-show="loginStatus">{{loginStatus}}</div>
+
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+            <input ng-model="user.email" type="text" class="form-control" placeholder="אימייל" required> 
+        </div> <br>
+        
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-lock"></span>
+            </div>
+            <input ng-model="user.password" type="password" class="form-control" placeholder="ססמא" required>
+        </div> <br>
+        
+        <button type="submit" class="btn btn-lg btn-primary pull-left" > התחברות </button>
+        <button type="button" class="btn btn-lg btn-default" ng-click="toLogin = !toLogin"> הרשמה </button>
+        <br> <br>
+        <button type="button" ng-click="FBlogin()" class="btn btn-lg btn-facebook btn-block">התחברות עם פייסבוק</button> <br>
+        <a href="http://bbari.co.il/BariBari%20Privacy%20Policy.pdf" target="_blank">מדיניות פרטיות</a>
+    </form>
+</div>
+
+<div ng-show="!toLogin">
+    <h1>הרשמה</h1>
+    <form name="registerForm" class="full-width col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4" ng-submit="loginForm.$valid && registerUser()">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+            <input ng-model="user.email" type="text" class="form-control" placeholder="אימייל" required> 
+        </div> <br>
+        
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-lock"></span>
+            </div>
+            <input ng-model="user.password" type="password" class="form-control" placeholder="ססמא" required>
+        </div> <br>
+        
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>
+            <input ng-model="user.name" type="text" class="form-control" placeholder="שם" required>
+        </div> <br>
+
+        <input ng-model="user.permissions" type="hidden"> 
+        <button type="submit" class="btn btn-lg btn-primary pull-left"> הרשמה </button>
+        <button type="button" class="btn btn-lg btn-default pull-right" ng-click="toLogin = !toLogin"> התחברות </button> <br><br> <br>
+        <a href="http://bbari.co.il/BariBari%20Privacy%20Policy.pdf" target="_blank">מדיניות פרטיות</a>
+    </form>
+</div>
