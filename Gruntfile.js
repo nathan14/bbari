@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 		less: {
 			dist: {
 				files: {
-					"css/style.min.css": "css/style.less"
+					'css/new-style.css': 'css/style.less'
 				}
 			}
 		},
@@ -36,7 +36,8 @@ module.exports = function(grunt) {
 			},
 				target: {
 					files: {
-						'dist/css/style.min.css': ['css/bootstrap.css', 'css/bootstrap-rtl.css', 'css/textAngular.css', 'css/loader.css', 'css/style.css']
+						'dist/css/style.min.css': ['css/bootstrap.css', 'css/bootstrap-rtl.css', 'css/textAngular.css',
+						'css/loader.css', 'css/style.css', 'css/new-style.css']
 				}
 			}
 		},
@@ -96,8 +97,8 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: ['js/**/*'],
-			tasks: ['jshint']
+			files: ['js/**/*', 'css/**/*.less'],
+			tasks: ['jshint', 'less']
 		}
 	});
 
