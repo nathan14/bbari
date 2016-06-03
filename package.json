@@ -1,0 +1,17 @@
+{
+	"name": "bbari",
+	"version": "1.0.0",
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-contrib-jshint": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-ftp-deploy": "*",
+		"grunt-contrib-copy": "*",
+		"grunt-processhtml": "*",
+		"grunt-contrib-imagemin": "*",
+		"grunt-contrib-watch": "*",
+		"grunt-contrib-cssmin": "*",
+		"grunt-contrib-less": "*",
+		"grunt-criticalcss": "*"
+	}
+}
