@@ -49,7 +49,7 @@
 							חיפוש מתכוני בריאות
 						</a>
 					</li>
-					<li ng-show="user.permissions > 2">
+					<li ng-if="user.permissions > 2">
 						<a href="/post-new" ng-click="isCollapsed = !isCollapsed; activeBtn()">
 							<span class="glyphicon glyphicon-plus"></span>
 							פוסט חדש
