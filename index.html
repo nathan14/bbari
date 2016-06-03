@@ -104,11 +104,11 @@
 		</div>
 	</div>
 	<div class="container container-view">
-		<ng-view autoscroll="true" class="ng-cloak col-md-10 col-md-offset-1"></ng-view>
+		<ng-view autoscroll="true" class="ng-cloak"></ng-view>
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<div class="col-md-4 col-md-offset-1 xs-full-width" ng-controller="SendEmailController">
+			<div class="col-md-4 xs-full-width" ng-controller="SendEmailController">
 				<h2>דברו איתנו</h2>
 				<form name="contactUsForm" ng-submit="contactUsForm.$valid && submit()" novalidate>
 					<input type="text" class="form-control" ng-model="formData.name" placeholder="שם" required>
@@ -125,7 +125,7 @@
 					<br>
 				</form>
 			</div>
-			<div class="col-md-2 col-md-offset-1 xs-full-width">
+			<div class="col-md-3 col-md-offset-1 xs-full-width">
 				<h2>תזונה נכונה</h2>
 				<ul class="footer-ul">
 					<li> <a href="http://www.atid-eatright.org.il/">עמותת עתיד</a> </li>
@@ -134,9 +134,10 @@
 					<li> <a href="http://bbari.co.il/post/10026/10-%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%9C%D7%9E%D7%AA%D7%9B%D7%95%D7%A0%D7%99%D7%9D-%D7%91%D7%A8%D7%99%D7%90%D7%99%D7%9D" rel="nofollow">10 טיפים למתכונים בריאים</a> </li>
 				</ul>
 			</div>
-			<div class="col-md-2 col-md-offset-1 xs-full-width">
+			<div class="col-md-3 col-md-offset-1 xs-full-width">
 				<h2>ארכיון</h2>
 				<ul class="footer-ul">
+					<li> <a href="/posts/2/2016">פברואר, 2016</a> </li>
 					<li> <a href="/posts/10/2015">אוקטובר, 2015</a> </li>
 					<li> <a href="/posts/9/2015">ספטמבר, 2015</a> </li>
 					<li> <a href="/posts/8/2015">אוגוסט, 2015</a> </li>
