@@ -15,8 +15,8 @@
 		<span class="glyphicon glyphicon-time"></span> {{post.estTime}}
 	</p>
 	<p class="short-desc">
-		<span itemprop="description" ng-bind-html="post.shortDesc | limitTo: 100"></span>
-		<span ng-if="post.shortDesc.length > 100">...</span>
+		<span itemprop="description" ng-bind-html="post.shortDesc | limitTo: 110"></span>
+		<span ng-if="post.shortDesc.length > 110">...</span>
 	</p>
 	<a href="/post/{{post.id}}/{{post.title | spaceless:post.title}}" rel="nofollow" target="_self" class="btn btn-primary pull-left">
 		 קרא עוד 
