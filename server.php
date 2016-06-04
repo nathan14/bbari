@@ -73,7 +73,7 @@ $app->post("/post-new", function () use ($app, $conn) {
 	$estTime = $paramsDecode['estTime'];
 
 	$conn->query("INSERT INTO posts (title , type, date, authorName ,authorId ,shortDesc ,content ,recepie ,recepieHowTo ,imgId, badge, estTime)
-				  VALUES ('$title', '$date' ,'$authorName', '$authorId', '$shortDesc', '$content', '$recepie', '$recepieHowTo', '$imgId', '$badge', '$estTime')");
+				  VALUES ('$title', '$type', '$date' ,'$authorName', '$authorId', '$shortDesc', '$content', '$recepie', '$recepieHowTo', '$imgId', '$badge', '$estTime')");
 
 	$id = mysqli_insert_id($conn);
 
