@@ -26,7 +26,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavBarCtrl">
 		<div class="container navbar-container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" ng-click="isCollapsed = !isCollapsed; activeBtn()" ng-class="{'active': isActive}">
+				<button type="button" class="navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed" ng-class="{active: !isCollapsed}">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -38,31 +38,31 @@
 			<div id="navbar" class="navbar-collapse navbar-responsive-collapse" ng-class="{collapse: isCollapsed}">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="/" ng-click="isCollapsed = true; activeBtn()">
+						<a href="/" ng-click="isCollapsed = true">
 							<span class="glyphicon glyphicon-home"></span>
 							בית
 						</a>
 					</li>
 					<li>
-						<a href="/search" ng-click="isCollapsed = true; activeBtn()">
+						<a href="/search" ng-click="isCollapsed = true">
 							<span class="glyphicon glyphicon-search"></span>
 							חיפוש מתכוני בריאות
 						</a>
 					</li>
-					<li ng-if="user.permissions > 2">
-						<a href="/post-new" ng-click="isCollapsed = true; activeBtn()">
+					<li ng-show="user.permissions > 2">
+						<a href="/post-new" ng-click="isCollapsed = true">
 							<span class="glyphicon glyphicon-plus"></span>
 							פוסט חדש
 						</a>
 					</li>
 					<li>
-						<a href="/about" ng-click="isCollapsed = true; activeBtn()">
+						<a href="/about" ng-click="isCollapsed = true">
 							<span class="glyphicon glyphicon-info-sign"></span>
 							אודות
 						</a>
 					</li>
 					<li ng-show="!user">
-						<a href="/login-register" ng-click="isCollapsed = true; activeBtn()">
+						<a href="/login-register" ng-click="isCollapsed = true">
 							<span class="glyphicon glyphicon-user"></span>
 							התחברות / הרשמה
 						</a>

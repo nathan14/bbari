@@ -298,12 +298,7 @@
 	}]);
 
 	app.controller('MainController', ['$rootScope', '$scope', '$location', '$timeout', '$anchorScroll', 'FileUploader', '$window', 'SEOService',
-					function($rootScope, $scope, $location, $timeout, $anchorScroll, FileUploader, $window, SEOService) {
-		
-	  	$scope.activeBtn = function() {
-	    	$scope.isActive = !$scope.isActive;
-	  	};
-						
+					function($rootScope, $scope, $location, $timeout, $anchorScroll, FileUploader, $window, SEOService) {					
 		$scope.uploader = new FileUploader({
 							url: 'server.php/upload-img',
 							autoUpload: true,
