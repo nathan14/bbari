@@ -3,8 +3,13 @@
 			['ngRoute', 'ngSanitize', 'posts', 'utils', 'ui.bootstrap',
 			 'angularFileUpload', 'angularUtils.directives.dirDisqus', 'textAngular', 'facebook']);
 
-	app.config(['$routeProvider', '$locationProvider', 'FacebookProvider',
-				function($routeProvider, $locationProvider, FacebookProvider) {
+	app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'FacebookProvider', function($routeProvider, $locationProvider, $httpProvider,FacebookProvider) {
+		$httpProvider.defaults.headers.common = {};
+		$httpProvider.defaults.headers.post = {};
+		$httpProvider.defaults.headers.delete = {};
+		$httpProvider.defaults.headers.put = {};
+		$httpProvider.defaults.headers.patch = {};
+
 		$routeProvider.
 		when('/', {
 			templateUrl: 'partials/home.html',
