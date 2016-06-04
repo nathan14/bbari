@@ -1,13 +1,13 @@
 <h1 ng-bind-html="actionBtn"></h1>
 <div class="btn-group" uib-dropdown is-open="status.isopen">
 	<button type="button" class="btn btn-primary btn-form-control" uib-dropdown-toggle="status.isopen = !status.isopen">
-	<span ng-if="post.type === 'recipe'">מתכון</span>
-	<span ng-if="post.type === 'info'">עמוד מידע</span>
+	<span ng-if="post.postType === 'recipe'">מתכון</span>
+	<span ng-if="post.postType === 'info'">עמוד מידע</span>
 	<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu" uib-dropdown-menu role="menu">
-		<li ng-click="post.type = 'recipe'"><a href="#">מתכון</a></li>
-		<li ng-click="post.type = 'info'"><a href="#">עמוד מידע</a></li>
+		<li ng-click="post.postType = 'recipe'"><a href="#">מתכון</a></li>
+		<li ng-click="post.postType = 'info'"><a href="#">עמוד מידע</a></li>
 	</ul>
 </div>
 <br><br>
@@ -28,7 +28,7 @@
 	</div>
 	<br>
 </div>
-<div ng-if="post.type === 'recipe'">
+<div ng-if="post.postType === 'recipe'">
 	<div class="row">
 		<div class="col-xs-4">
 			<label>זמן הכנה</label> <br>
@@ -57,7 +57,7 @@
 <input type="hidden" ng-model="uploader.formData.id">
 <label>תוכן</label> <br>
 <text-angular ta-toolbar="[['h2', 'h3', 'h4', 'bold'],['italics', 'underline', 'ul', 'ol'],['redo', 'undo', 'insertImage', 'insertLink', 'html']]" ng-model="post.content"></text-angular> <br>
-<div ng-if="post.type === 'recipe'">
+<div ng-if="post.postType === 'recipe'">
 	<label>מרכיבים</label> <br>
 	<text-angular ta-toolbar="[['h4','bold', 'italics', 'underline'],['ul', 'ol', 'redo', 'undo']]" ng-model="post.recepie"></text-angular> <br>
 	<label>אופן הכנה</label> <br>

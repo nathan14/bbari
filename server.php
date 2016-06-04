@@ -60,7 +60,7 @@ $app->post("/post-new", function () use ($app, $conn) {
 	$paramsDecode = json_decode($params, true);
 
 	$title = $paramsDecode['title'];
-	$type = $paramsDecode['type'];
+	$postType = $paramsDecode['postType'];
 	$date = $paramsDecode['date'];
 	$authorName = $paramsDecode['authorName'];
 	$authorId = $paramsDecode['authorId'];
@@ -72,8 +72,8 @@ $app->post("/post-new", function () use ($app, $conn) {
 	$badge = $paramsDecode['badge'];
 	$estTime = $paramsDecode['estTime'];
 
-	$conn->query("INSERT INTO posts (title , type, date, authorName ,authorId ,shortDesc ,content ,recepie ,recepieHowTo ,imgId, badge, estTime)
-				  VALUES ('$title', '$type', '$date' ,'$authorName', '$authorId', '$shortDesc', '$content', '$recepie', '$recepieHowTo', '$imgId', '$badge', '$estTime')");
+	$conn->query("INSERT INTO posts (title , postType, date, authorName ,authorId ,shortDesc ,content ,recepie ,recepieHowTo ,imgId, badge, estTime)
+				  VALUES ('$title', '$postType', '$date' ,'$authorName', '$authorId', '$shortDesc', '$content', '$recepie', '$recepieHowTo', '$imgId', '$badge', '$estTime')");
 
 	$id = mysqli_insert_id($conn);
 
@@ -90,7 +90,7 @@ $app->put("/post-edit", function () use ($app, $conn) {
 
 	$id = $paramsDecode['id'];
 	$title = $paramsDecode['title'];
-	$type = $paramsDecode['type'];
+	$postType = $paramsDecode['postType'];
 	$date = $paramsDecode['date'];
 	$authorName = $paramsDecode['authorName'];
 	$authorId = $paramsDecode['authorId'];
@@ -104,7 +104,7 @@ $app->put("/post-edit", function () use ($app, $conn) {
 
 	$rows = array();
 	$conn->query("UPDATE posts
-							SET title = '$title', type = '$type', date = '$date', authorName = '$authorName' ,authorId = '$authorId',
+							SET title = '$title', postType = '$postType', date = '$date', authorName = '$authorName' ,authorId = '$authorId',
 								 shortDesc = '$shortDesc', content = '$content', recepie = '$recepie',
 								 recepieHowTo = '$recepieHowTo', imgId = '$imgId', badge = '$badge', estTime = '$estTime'
 							WHERE id = '$id'");
