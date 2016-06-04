@@ -300,10 +300,8 @@
 	app.controller('MainController', ['$rootScope', '$scope', '$location', '$timeout', '$anchorScroll', 'FileUploader', '$window', 'SEOService',
 					function($rootScope, $scope, $location, $timeout, $anchorScroll, FileUploader, $window, SEOService) {
 		
-		$scope.isActive = false;
 	  	$scope.activeBtn = function() {
 	    	$scope.isActive = !$scope.isActive;
-	    	$scope.isCollapsed = !$scope.isCollapsed;
 	  	};
 						
 		$scope.uploader = new FileUploader({

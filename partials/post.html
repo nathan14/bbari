@@ -29,7 +29,7 @@
 			<span class="glyphicon glyphicon-remove"></span>
 		</button>
 		<p class="post-content" ng-bind-html="post.content"> </p>
-		<div id="recepie" class="paper top-shadow bottom-shadow" ng-show="post.recepie">
+		<div id="recepie" class="paper top-shadow bottom-shadow" ng-show="post.recepie" ng-if="post.postType === 'recipe'">
 			<h3>מרכיבים</h3>
 			<p ng-bind-html="post.recepie"> </p>
 			<h3>אופן הכנה</h3>
