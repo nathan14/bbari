@@ -142,6 +142,7 @@ a:hover, a:active, a:focus {
 }
 
 .post-img {
+	border-top: 1px solid #008282;
 	margin-top: 15px;
 	object-fit: cover;
 	width: 100%;
@@ -149,7 +150,6 @@ a:hover, a:active, a:focus {
 }
 
 .post.post-preview {
-	border-top: solid 1.5px #008282;
 	margin-top: 8px;
 	margin-bottom: 70px;
 }
@@ -206,7 +206,7 @@ a:hover, a:active, a:focus {
 }
 
 .post.post-preview .post-badge {
-	top: 8px;
+	top: 46px;
 	left: 15px;
 	background: #008282;
 }
@@ -221,6 +221,7 @@ a:hover, a:active, a:focus {
 }
 
 .post-preview-img {
+	border-top: 1px solid #008282;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	object-fit: cover;
@@ -333,6 +334,7 @@ label.btn-file-upload input[type="file"] {
 @media(max-width: 768px) {
 	h1, h2, h3 {
 		margin-top: auto;
+		margin-bottom: 15px;
 	}
 
 	.container.navbar-container {
@@ -367,13 +369,13 @@ label.btn-file-upload input[type="file"] {
 
 	.post.post-preview .post-badge {
 		left: 0;
-		top: 52px;
+		top: 51px;
 	}
 
 	.post .post-badge {
 		left: 0;
 	    top: auto;
-	    background: none;
+	    background: #008282;
 	}
 
 	.post .short-desc {
