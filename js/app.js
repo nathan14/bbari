@@ -150,6 +150,7 @@
 	app.service('PostService', ['$http','$q', 'serverPath', function($http, $q, serverPath) {
 		this.emptyPost = function() {
 			return {
+				type: '',
 				title: '',
 				date: '',
 				badge: '',
@@ -448,12 +449,12 @@
 					function($location, $scope, $filter, $http, PostService, UserService) {
 		$scope.post = PostService.emptyPost();
 		
-		var cuurentUser = UserService.getUserDetails();
-		if(!cuurentUser || cuurentUser.permissions < 4) {
+		var currentUser = UserService.getUserDetails();
+		if(!currentUser || currentUser.permissions < 4) {
 			$location.path('/');
 		}
-		$scope.post.authorId = cuurentUser.id;
-		$scope.post.authorName = cuurentUser.name;
+		$scope.post.authorId = currentUser.id;
+		$scope.post.authorName = currentUser.name;
 		
 		$scope.postNew = function() {
 			$scope.post.imgId = $scope.uploader.formData.id;
