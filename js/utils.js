@@ -46,7 +46,7 @@
 	    };
 	});
 
-	app.controller('ModalCtrl', ['$location', '$scope', '$modal', 'PostService', function($location, $scope, $modal, PostService) {
+	app.controller('ModalCtrl', ['$location', '$scope', '$uibModal', 'PostService', function($location, $scope, $uibModal, PostService) {
 		$scope.open = function (modalContent, postId) {
 			
 			var title = '';
@@ -58,7 +58,7 @@
 				action = 'postDelete';
 			}
 			
-		    var modalInstance = $modal.open({
+		    var modalInstance = $uibModal.open({
 				templateUrl: 'partials/modal.html',
 		      	controller: 'ModalInstanceCtrl',
 		      	size: 'sm',
@@ -98,8 +98,8 @@
 	  };
 	}]);
 	
-	app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'title', 'content', 'postId', 'action',
-			function($scope, $modalInstance, title, content, postId, action) {
+	app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'title', 'content', 'postId', 'action',
+			function($scope, $uibModalInstance, title, content, postId, action) {
 		$scope.title = title;
 		$scope.content = content;
 		
@@ -109,11 +109,11 @@
 				postId: postId
 			};
 
-			$modalInstance.close(answer);
+			$uibModalInstance.close(answer);
 	  	};
 	
 		$scope.cancel = function () {
-			$modalInstance.dismiss('cancel');
+			$uibModalInstance.dismiss('cancel');
 		};
 	}]);
 

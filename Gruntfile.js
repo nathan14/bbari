@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 			prod: {
 				files: {
 					'dist/js/app.min.js': ['js/core/angular.js', 'js/core/momemnt.js', 'js/core/angular-route.js', 'js/core/angular-sanitize.js',
-											'js/core/ui-bootstrap-tpls-0.13.3.js',
+											'js/core/ui-bootstrap-tpls.js',
 											'js/textAngular/textAngular.js', 'js/textAngular/textAngularSetup.js',
 											'js/textAngular/textAngular-sanitize.js', 'js/textAngular/rangy-core.js',
 											'js/textAngular/rangy-selectionsaverestore.js',

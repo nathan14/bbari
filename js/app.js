@@ -155,7 +155,7 @@
 	app.service('PostService', ['$http','$q', 'serverPath', function($http, $q, serverPath) {
 		this.emptyPost = function() {
 			return {
-				type: '',
+				type: 'recipe',
 				title: '',
 				date: '',
 				badge: '',
@@ -209,6 +209,7 @@
 		};
 		
 		this.postNew = function(postNew) {
+			debugger;
 			var promise = $http.post(serverPath.path + 'server.php/post-new', postNew);
 			var def = $q.defer();
 			

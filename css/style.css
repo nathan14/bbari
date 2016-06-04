@@ -245,7 +245,7 @@ a:hover, a:active, a:focus {
 }
 
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
-	background-color: #50C7A7;
+	background-color: #50C7A7 !important;
 }
 
 .btn.btn-primary.inverse {

@@ -1,4 +1,16 @@
 <h1 ng-bind-html="actionBtn"></h1>
+<div class="btn-group" uib-dropdown is-open="status.isopen">
+	<button type="button" class="btn btn-primary btn-form-control" uib-dropdown-toggle="status.isopen = !status.isopen">
+	<span ng-if="post.type === 'recipe'">מתכון</span>
+	<span ng-if="post.type === 'info'">עמוד מידע</span>
+	<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" uib-dropdown-menu role="menu">
+		<li ng-click="post.type = 'recipe'"><a href="#">מתכון</a></li>
+		<li ng-click="post.type = 'info'"><a href="#">עמוד מידע</a></li>
+	</ul>
+</div>
+<br><br>
 <label>כותרת</label> <br>
 <input type="text" class="form-control" ng-model="post.title" required> <br>
 <label>תאריך</label> <br>
@@ -16,16 +28,18 @@
 	</div>
 	<br>
 </div>
-<div class="row">
-	<div class="col-xs-4">
-		<label>זמן הכנה</label> <br>
-		<input type="text" maxlength="15" class="form-control" ng-model="post.estTime" required>
-	</div>
-	<div class="col-xs-8">
-		<label>תגית</label> <br>
-		<input type="text" maxlength="25" class="form-control" ng-model="post.badge">
-	</div>
-</div> <br>
+<div ng-if="post.type === 'recipe'">
+	<div class="row">
+		<div class="col-xs-4">
+			<label>זמן הכנה</label> <br>
+			<input type="text" maxlength="15" class="form-control" ng-model="post.estTime" required>
+		</div>
+		<div class="col-xs-8">
+			<label>תגית</label> <br>
+			<input type="text" maxlength="25" class="form-control" ng-model="post.badge">
+		</div>
+	</div> <br>
+</div>
 <label>תקציר</label> <br>
 <textarea class="form-control" rows="2" ng-model="post.shortDesc" required></textarea> <br>
 <label>תמונה</label> <br>
@@ -43,9 +57,11 @@
 <input type="hidden" ng-model="uploader.formData.id">
 <label>תוכן</label> <br>
 <text-angular ta-toolbar="[['h2', 'h3', 'h4', 'bold'],['italics', 'underline', 'ul', 'ol'],['redo', 'undo', 'insertImage', 'insertLink', 'html']]" ng-model="post.content"></text-angular> <br>
-<label>מרכיבים</label> <br>
-<text-angular ta-toolbar="[['h4','bold', 'italics', 'underline'],['ul', 'ol', 'redo', 'undo']]" ng-model="post.recepie"></text-angular> <br>
-<label>אופן הכנה</label> <br>
-<text-angular ta-toolbar="[['h4','bold', 'italics', 'underline'],['ul', 'ol', 'redo', 'undo']]" ng-model="post.recepieHowTo"></text-angular> <br>
+<div ng-if="post.type === 'recipe'">
+	<label>מרכיבים</label> <br>
+	<text-angular ta-toolbar="[['h4','bold', 'italics', 'underline'],['ul', 'ol', 'redo', 'undo']]" ng-model="post.recepie"></text-angular> <br>
+	<label>אופן הכנה</label> <br>
+	<text-angular ta-toolbar="[['h4','bold', 'italics', 'underline'],['ul', 'ol', 'redo', 'undo']]" ng-model="post.recepieHowTo"></text-angular> <br>
+</div>
 <button type="submit" class="btn btn-lg btn-primary pull-left" ng-bind-html="actionBtn"> </button>
 <span class="btn btn-lg btn-status" ng-show="statusBtn"> {{statusBtn}} </span>
