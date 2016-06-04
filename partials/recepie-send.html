@@ -4,12 +4,12 @@
 		יש לכם מתכון רגיל ואתם רוצים להפוך אותו למתכון בריא? <br>
 		הגעתם למקום הנכון, השתמשו בטופס למטה כדי לשלוח לנו את המתכון שלכם ותתכוננו לאכול אוכל בריא יותר!
 	</p>
-    <form name="recepieSendForm" class="col-md-6 full-width" ng-submit="recepieSendForm.$valid && submit()" novalidate>
-        <input type="text" class="form-control" ng-model="formData.email" placeholder="אימייל" required> <br>
-        <input type="text" class="form-control" ng-model="formData.name" placeholder="שם" required> <br>
-        <textarea class="form-control" rows="4" ng-model="formData.recepie" placeholder="מתכון" required></textarea> <br>
-        <textarea class="form-control" rows="2" ng-model="formData.notes" placeholder="הערות" required></textarea> <br>
-        <button type="submit" class="btn btn-lg btn-primary pull-left" > שלח מתכון </button>
-        <span class="btn btn-lg btn-status black" ng-show="statusBtn"> {{statusBtn}} </span>
-    </form>
+	<form name="recepieSendForm" class="col-md-6 full-width" ng-submit="recepieSendForm.$valid && submit()" novalidate>
+		<input type="text" class="form-control" ng-model="formData.email" placeholder="אימייל" required> <br>
+		<input type="text" class="form-control" ng-model="formData.name" placeholder="שם" required> <br>
+		<textarea class="form-control" rows="4" ng-model="formData.recepie" placeholder="מתכון" required></textarea> <br>
+		<textarea class="form-control" rows="2" ng-model="formData.notes" placeholder="הערות" required></textarea> <br>
+		<button type="submit" class="btn btn-lg btn-primary pull-left" > שלח מתכון </button>
+		<span class="btn btn-lg btn-status black" ng-show="statusBtn"> {{statusBtn}} </span>
+	</form>
 </div>
