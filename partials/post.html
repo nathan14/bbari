@@ -11,7 +11,7 @@
 		<p class="post-info" ng-show="post.date">
 			<span class="glyphicon glyphicon-calendar"></span> {{post.date | date:"dd/MM/yyyy"}}
 			<span itemprop="author" class="glyphicon glyphicon-pencil"></span> {{post.authorName}}
-			<span class="glyphicon glyphicon-time"></span> {{post.estTime}}
+			<span ng-if="post.postType === 'recipe'" class="glyphicon glyphicon-time"></span> {{post.estTime}}
 		</p>
 		<p class="short-desc" itemprop="description" ng-bind-html="post.shortDesc"> <br> </p>
 		<button class="btn btn-facebook" ng-show="adminBtns" ng-click="FBShare()">
