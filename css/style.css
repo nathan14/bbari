@@ -369,7 +369,7 @@ label.btn-file-upload input[type="file"] {
 
 	.post.post-preview .post-badge {
 		left: 0;
-		top: 51px;
+		top: auto;
 	}
 
 	.post .post-badge {
