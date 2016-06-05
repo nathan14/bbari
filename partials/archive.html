@@ -1,7 +1,6 @@
 <div id="posts">
-	<h1>ארכיון מתכונים - {{month}}/{{year}}</h1>
-
-	<div class="full-width col-md-6">
+	<div class="col-md-6 xs-full-width">
+		<h1>ארכיון מתכונים - {{month}}/{{year}}</h1>
 	    <div class="input-group">
 	        <div class="input-group-addon">
 	            <span class="glyphicon glyphicon-search"></span>
@@ -9,8 +8,7 @@
 	        <input type="text" class="form-control" ng-model="searchString" placeholder="חיפוש"/>
 	    </div>
 	</div>
-	
-    <div ng-repeat="post in posts | searchFor:searchString" class="row col-xs-12">
+    <div ng-repeat="post in posts | searchFor:searchString" class="col-xs-12 xs-full-width">
     	<post-preview-search></post-preview-search>
     </div>
 </div>

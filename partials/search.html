@@ -1,5 +1,5 @@
 <div id="posts">
-	<div class="col-md-6">
+	<div class="col-md-6 xs-full-width">
 		<h1>חיפוש מתכונים</h1>
 		<div class="input-group">
 			<div class="input-group-addon">
@@ -8,7 +8,7 @@
 			<input type="text" class="form-control" ng-model="searchString" placeholder="חיפוש"/>
 		</div>
 	</div>
-	<div ng-repeat="post in posts | searchFor:searchString" class="col-xs-12" ng-show="searchString">
+	<div ng-repeat="post in posts | searchFor:searchString" class="col-xs-12 xs-full-width" ng-show="searchString">
 		<post-preview-search></post-preview-search>
 	</div>
 </div>
